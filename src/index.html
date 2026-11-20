@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>select-translate</title>
+    <title>Select-Translate 設定</title>
     <script type="module" src="/main.js" defer></script>
   </head>
 
   <body>
+    <main class="settings">
+      <h1>Select-Translate 設定</h1>
+
+      <form id="settings-form">
+        <div class="field">
+          <label for="api-key">DeepL API 金鑰</label>
+          <div class="input-row">
+            <input id="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="貼上你的 DeepL API 金鑰" />
+            <button id="toggle-key" type="button" class="secondary">顯示</button>
+          </div>
+          <p class="hint">可在 DeepL 帳戶的「API Keys」頁面取得；免費版金鑰結尾為 <code>:fx</code>。</p>
+        </div>
+
+        <div class="field">
+          <label for="shortcut">翻譯快捷鍵</label>
+          <input id="shortcut" type="text" readonly placeholder="點這裡後直接按下想要的組合鍵" />
+          <p class="hint">點一下輸入框，再按下組合鍵（至少包含 Ctrl、Alt、Shift 或 Win 其中之一）。</p>
+          <p id="shortcut-status" class="hint"></p>
+        </div>
+
+        <div class="actions">
+          <span id="message" role="status"></span>
+          <button id="save" type="submit">儲存</button>
+        </div>
+      </form>
+
+      <p class="usage">使用方式：在任何程式中選取文字，按下快捷鍵，譯文會顯示在滑鼠游標旁。</p>
+    </main>
   </body>
 </html>

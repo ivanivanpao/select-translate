@@ -1,0 +1,122 @@
+/* 浮動翻譯視窗樣式 */
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #656d76;
+  --border: #d0d7de;
+  --hover: #eef1f4;
+  --error: #cf222e;
+  font-family: "Segoe UI", "Microsoft JhengHei UI", sans-serif;
+  font-size: 14px;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2b2d31;
+    --fg: #e6e7e9;
+    --muted: #9aa1a9;
+    --border: #3d4148;
+    --hover: #383a40;
+    --error: #ff7b72;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+/* 內容超過視窗最高高度時，整個視窗內捲動 */
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+#card {
+  padding: 0 14px 12px;
+}
+
+/* 捲動時標題列固定在上方，關閉按鈕隨時按得到 */
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 6px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+#lang {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tools {
+  display: flex;
+  gap: 4px;
+}
+
+button {
+  padding: 2px 8px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--hover);
+  color: var(--fg);
+}
+
+#translation {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  user-select: text;
+}
+
+#translation:empty {
+  display: none;
+}
+
+#card[data-status="error"] #translation {
+  color: var(--error);
+}
+
+/* 原文顯示得小一點，最多三行 */
+#source {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#source:empty {
+  display: none;
+}
+
+/* 翻譯中時，原文多顯示一點 */
+#card[data-status="loading"] #source {
+  -webkit-line-clamp: 6;
+}

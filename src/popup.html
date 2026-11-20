@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select-Translate</title>
+    <script type="module" src="/popup.js" defer></script>
+  </head>
+
+  <body>
+    <div id="card">
+      <header>
+        <span id="lang"></span>
+        <div class="tools">
+          <button id="copy" type="button" title="複製譯文" hidden>複製</button>
+          <button id="close" type="button" title="關閉（Esc）" aria-label="關閉">✕</button>
+        </div>
+      </header>
+
+      <p id="translation"></p>
+      <p id="source"></p>
+    </div>
+  </body>
+</html>
