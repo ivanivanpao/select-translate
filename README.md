@@ -7,6 +7,14 @@ Windows 劃詞翻譯工具。在任何應用程式中選取文字，按下快捷
 - 常駐在系統匣，平常不佔畫面，也不佔工作列
 - 翻譯完成後會還原你原本的剪貼簿內容
 
+## 下載安裝
+
+1. 到 [Releases](https://github.com/ivanivanpao/select-translate/releases/latest) 下載 `select-translate_x.x.x_x64-setup.exe`
+2. 雙擊安裝，不需要系統管理員權限，也不需要另外安裝其他軟體
+3. 安裝檔沒有數位簽章，Windows 可能會顯示「Windows 已保護您的電腦」，請按「其他資訊」→「仍要執行」
+
+支援 Windows 10 / 11（64 位元）。
+
 ## 使用方式
 
 1. 啟動 App 後，系統匣會出現圖示。第一次使用時會自動開啟設定視窗。
